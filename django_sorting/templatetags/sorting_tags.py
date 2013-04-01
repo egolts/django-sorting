@@ -71,8 +71,9 @@ class SortAnchorNode(template.Node):
             title = "%s %s" % (self.title, icon)
         else:
             title = self.title
-
+        
         url = '%s?sort=%s%s' % (request.path, self.field, urlappend)
+        data = ' data-sort="%s" data-dir="%s" ' % (self.field, getvars.get('dir','asc'))
         return '<a href="%s" title="%s">%s</a>' % (url, self.title, title)
 
 
