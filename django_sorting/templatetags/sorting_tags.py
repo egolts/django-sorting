@@ -74,7 +74,7 @@ class SortAnchorNode(template.Node):
         
         url = '%s?sort=%s%s' % (request.path, self.field, urlappend)
         data = ' data-sort="%s" data-dir="%s" ' % (self.field, getvars.get('dir','asc'))
-        return '<a href="%s" title="%s">%s</a>' % (url, self.title, title)
+        return '<a href="%s" %s title="%s">%s</a>' % (url, data,  self.title, title)
 
 
 def autosort(parser, token):
